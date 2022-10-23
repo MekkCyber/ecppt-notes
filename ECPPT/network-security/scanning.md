@@ -461,6 +461,12 @@ We can execute this scan with nmap, using the option `-D` (no spaces between IP 
   ```
   nmap -sS -D [DecoyIP#1],[DecoyIP#2],[DecoyIP#3],ME [target]
   ```
+  Or we can generate some random ip addresses even if they are not in the network :
+  
+  ```
+  nmap -sS -D RND:10 [target]
+  ```
+  
   Description:
   - `ME` keyword is used to define the position of our real IP addresses among the decoys. If it is not specified, nmap will but you IP in a random position.
 
