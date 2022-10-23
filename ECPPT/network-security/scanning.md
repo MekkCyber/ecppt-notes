@@ -270,7 +270,8 @@ There are several tools that are essential to network enumeration:
   - XML output `-oX` : creates an XML output that can be easily parsed by various tools
   - Grepable output `-oG` (Deprecated but still popular) : lists each host on one line and can be easily used to search and parse with `grep`
 
-  GUI alternative to nmap : [Zenmap](https://nmap.org/zenmap/)
+  GUI alternative to nmap : [Zenmap](https://nmap.org/zenmap/).
+  
   **NSE:**
   In order to find some specific scripts to run we can look in the /usr/share/nmap/scripts directory, or use the --script-help option
   ```
