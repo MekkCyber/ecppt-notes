@@ -166,6 +166,12 @@ There are several tools that are essential to network enumeration:
       ```
       If the IP ID Sequence is incremental,
       it will output `IP ID Sequence Generation: Incremental`
+      
+      An other option is to use a script : 
+      
+      ```
+      nmap --script ipidseq [IP_ADDRESS] -p [PORT]
+      ```
 
     Before seeing the attack in detail, let's take a look at the steps required to mount it:
       1. Probe the zombie's IP ID and record its value
@@ -211,7 +217,7 @@ There are several tools that are essential to network enumeration:
 
       If we inspect the traffic with Wireshark, we will not see any communication between the target host and out original IP addresses!
 
-      You can see a detailed list of every packet sent and received with nmap by using the `--packet-trace` option
+      You can see a detailed list of every packet sent and received with nmap by using the `--packet-trace` option.
 
   - Never do DNS resolution `-n`
     This is an additional flag we can add to our nmap scans to increase our scan times, and also help us stay a bit more "under the radar", as reverse DNS lookups can generate more noise than necessary.
@@ -277,7 +283,10 @@ There are several tools that are essential to network enumeration:
   ```
       nmap --script-help "smb*" and discovery
   ```
-  discovery is the category where to search.
+  discovery is the category where to search. However before using scripts it is better to update the scripts db :
+  ```
+      namp --script-updatedb
+  ```
 - Hping
   We will discuss on how to use hping to conduct *idle scan*.
 
