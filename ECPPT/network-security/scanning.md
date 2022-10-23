@@ -445,7 +445,8 @@ Note that fragmentation does not work very well in this type of scan:
 - `-sT` (TCP connect() scan)
 - `-sV` (Version detection)
 
-Notice that instead of using `-f`, we can use `--mtu` to specify a custom offset size. It is important to know that the offset must be a multiple of 8.
+Notice that instead of using `-f` (which divide the packet into fragments of 8 bytes), we can use `--mtu` to specify a custom offset size. It is important to know that the offset must be a multiple of 8, or we can use `-f -f` for example for a fragment size of 16 bytes
+
 
 #### 2.4.2. Decoys
 The aim of using decoys is to add noise to the IDS by sending scans from spoofed IP addresses. As a result, a list of forged IPs (decoys) will appear on the IDS, along with the real attacker IP. This confuses the analyst watching the system, making it harder to identify the actual attacker.
@@ -519,7 +520,11 @@ With the following command we run a TCP SYN scan and all the communications will
 ```
 nmap -sS --source-port 53 [target]
 ```
-
+#### 2.4.5. Random data
+We can try to add some random data to the packets in order to bypass Firewalls : 
+```
+nmap -sS --data-length 10 -p [PORT] [target]
+```
 These are just a few techniques that an attacker can use to evade Firewall/IDs detection.
 
 You can learn more about nmap options from their [online manual](http://nmap.org/book/man-bypass-firewalls-ids.html).
