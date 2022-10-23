@@ -271,13 +271,12 @@ There are several tools that are essential to network enumeration:
   - Grepable output `-oG` (Deprecated but still popular) : lists each host on one line and can be easily used to search and parse with `grep`
 
   GUI alternative to nmap : [Zenmap](https://nmap.org/zenmap/)
-
-  Other features : NSE (Nmap Scripting Engine)
   **NSE:**
   In order to find some specific scripts to run we can look in the /usr/share/nmap/scripts directory, or use the --script-help option
   ```
       nmap --script-help "smb*" and discovery
   ```
+  discovery is the category where to search.
 - Hping
   We will discuss on how to use hping to conduct *idle scan*.
 
