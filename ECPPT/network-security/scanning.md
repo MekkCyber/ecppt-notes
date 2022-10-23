@@ -273,8 +273,11 @@ There are several tools that are essential to network enumeration:
   GUI alternative to nmap : [Zenmap](https://nmap.org/zenmap/)
 
   Other features : NSE (Nmap Scripting Engine)
-
-
+  **NSE:**
+  In order to find some specific scripts to run we can look in the /usr/share/nmap/scripts directory, or use the --script-help option
+  ```
+      nmap --script-help "smb*" and discovery
+  ```
 - Hping
   We will discuss on how to use hping to conduct *idle scan*.
 
