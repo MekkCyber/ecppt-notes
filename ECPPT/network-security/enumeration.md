@@ -253,7 +253,8 @@ By using the data we gathered in the scanning phase, we can search for systems w
 
   If we wish to navigate the target shares, we can use mount as an alternative to `net use`. For example, if we want to navigate the C share, we will run something similar to the following command.
   ```
-  sudo mount.cifd //192.168.99.162/C /media/K_share/ user=,pass=
+  sudo mount.cifs //192.168.99.162/C /media/K_share/ user=,pass=
+  sudo smbclient \\\\192.168.99.162\\<SHARE> 
   ```
 
   After we run it, we will be able t o browse the remote share (see image - shows we can `ls` into it).
